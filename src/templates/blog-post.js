@@ -11,7 +11,20 @@ class BlogPostTemplate extends React.Component {
   render() {
     const post = get(this.props, 'data.contentfulBlogPost')
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
-
+    const options = {
+      renderNode: {
+        'embedded-asset-block': node => {
+          const alt = node.data.target.fields.title['en-US']
+          const url = node.data.target.fields.file['en-US'].url
+          return (
+            <div className="container-img">
+              <img className="contentful-img" alt={alt} src={url} />
+              <p>{node.data.target.fields.title['en-US']}</p>
+            </div>
+          )
+        },
+      },
+    }
     return (
       <Layout location={this.props.location}>
         <div style={{ background: '#fff' }}>
@@ -37,7 +50,7 @@ class BlogPostTemplate extends React.Component {
                 __html: post.body2.childMarkdownRemark.html,
               }}
             /> */}
-            {documentToReactComponents(post.body.json)}
+            {documentToReactComponents(post.body.json, options)}
           </div>
         </div>
       </Layout>
