@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 import get from 'lodash/get'
 import Img from 'gatsby-image'
 import Layout from '../components/layout'
-
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import heroStyles from '../components/hero.module.css'
 
 class BlogPostTemplate extends React.Component {
@@ -32,11 +32,12 @@ class BlogPostTemplate extends React.Component {
             >
               {post.publishDate}
             </p>
-            <div
+            {/* <div
               dangerouslySetInnerHTML={{
-                __html: post.body.childMarkdownRemark.html,
+                __html: post.body2.childMarkdownRemark.html,
               }}
-            />
+            /> */}
+            {documentToReactComponents(post.body.json)}
           </div>
         </div>
       </Layout>
@@ -62,9 +63,7 @@ export const pageQuery = graphql`
         }
       }
       body {
-        childMarkdownRemark {
-          html
-        }
+        json
       }
     }
   }
