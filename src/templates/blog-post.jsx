@@ -4,6 +4,7 @@ import Helmet from 'react-helmet'
 import get from 'lodash/get'
 import Img from 'gatsby-image'
 import Layout from '../components/layout'
+import { INLINES } from '@contentful/rich-text-types'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import heroStyles from '../components/hero.module.css'
 
@@ -17,11 +18,32 @@ class BlogPostTemplate extends React.Component {
           const alt = node.data.target.fields.title['en-US']
           const url = node.data.target.fields.file['en-US'].url
           return (
-            <div className="container-img">
+            <div className="container-embed">
               <img className="contentful-img" alt={alt} src={url} />
               <p>{node.data.target.fields.title['en-US']}</p>
             </div>
           )
+        },
+        [INLINES.HYPERLINK]: node => {
+          console.log('urls', node.data.uri.indexOf('youtube.com'))
+          if (node.data.uri.indexOf('youtube.com') > -1) {
+            let url = node.data.uri
+            if (url.indexOf('watch?v=')) {
+              url = url.replace('watch?v=', 'embed/')
+            }
+            console.log('embed url', url)
+            return (
+              <iframe
+                width="560"
+                height="315"
+                src={url}
+                frameBorder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="container-embed"
+              ></iframe>
+            )
+          }
         },
       },
     }

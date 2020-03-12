@@ -70,8 +70,13 @@ a {
 .list-inline li {
   display: inline-block;
 }
-.container-img {
+.container-embed {
   width: 50%;
   display: block;
   margin: 20px auto;
 }
+/* .container-embed iframe {
+  margin: 0 auto;
+  display: block;
+}
+ */

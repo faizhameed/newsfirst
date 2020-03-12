@@ -43,7 +43,10 @@ export const pageQuery = graphql`
         title
       }
     }
-    allContentfulBlogPost(sort: { fields: [publishDate], order: DESC }) {
+    allContentfulBlogPost(
+      sort: { fields: [publishDate], order: ASC }
+      filter: { tags: { eq: "javascript" } }
+    ) {
       edges {
         node {
           title
