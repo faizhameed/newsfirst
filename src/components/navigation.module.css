@@ -12,9 +12,16 @@
 .navigationItem {
   display: inline-flex;
   align-items: center;
+
   margin: 0 1em;
 }
 
 .navigationItem a {
-  color: currentColor;
+  text-decoration: none;
+}
+.navigation-link {
+  color: #f3f7f0;
+}
+.active-nav {
+  color: #f2545b;
 }

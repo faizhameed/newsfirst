@@ -5,13 +5,15 @@
   src: url('/avenir-400.woff2') format('woff2');
   font-display: swap;
 }
+/* https://www.colorsandfonts.com/palettes.html */
+/* FFD8BE - FFEEDD - F8F7FF - B8B8FF - 9381FF  pallets used gentle */
 
 body {
   font-family: 'Avenir', Tahoma, Arial, Helvetica, sans-serif;
   font-size: 1em;
   line-height: 1.65;
   color: #373f49;
-  background: #eee;
+  background: #19323c;
   margin: 0;
 }
 

@@ -6,13 +6,31 @@ export default () => (
   <nav role="navigation">
     <ul className={styles.navigation}>
       <li className={styles.navigationItem}>
-        <Link to="/">Home</Link>
+        <Link
+          className={styles.navigationLink}
+          activeClassName={styles.activeNav}
+          to="/"
+        >
+          Home
+        </Link>
       </li>
       <li className={styles.navigationItem}>
-        <Link to="/blog/">Blog</Link>
+        <Link
+          className={styles.navigationLink}
+          activeClassName={styles.activeNav}
+          to="/blog/"
+        >
+          Blog
+        </Link>
       </li>
       <li className={styles.navigationItem}>
-        <Link to="/contact/">Contact-Us</Link>
+        <Link
+          className={styles.navigationLink}
+          activeClassName={styles.activeNav}
+          to="/contact/"
+        >
+          Contact-Us
+        </Link>
       </li>
     </ul>
   </nav>
