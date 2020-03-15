@@ -1,22 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather&display=swap');
 .navigation {
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  height: 20vh;
-  max-height: 100px;
   font-size: 1.25em;
+  z-index: 100;
+  transition: all 1s;
+}
+.navigation ul {
+  padding: 0;
 }
 .logo-container {
   width: 100%;
   padding: 10px 0;
 }
 .logo-container h3,
-.logo-container,
-p {
+.logo-container p {
+  font-family: 'Merriweather', serif;
   margin: 0 auto;
   text-align: center;
+}
+.logo-container h3 {
+  color: #f3f7f0;
+}
+.logo-container p {
+  color: #a93f55;
+  /* text-decoration: underline #f3f7f0; */
 }
 
 .logo {
@@ -24,7 +30,7 @@ p {
   display: block;
   margin: 0 auto;
 }
-.navigationItem {
+/* .navigationItem {
   display: inline-flex;
   align-items: center;
 
@@ -33,10 +39,17 @@ p {
 
 .navigationItem a {
   text-decoration: none;
-}
+} */
 .navigation-link {
   color: #f3f7f0;
+  margin: 10px;
 }
+
+a:hover {
+  color: #a93f55;
+  text-decoration: none;
+}
+
 .active-nav {
   color: #f2545b;
 }

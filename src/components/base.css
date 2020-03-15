@@ -6,7 +6,14 @@
   font-display: swap;
 }
 /* https://www.colorsandfonts.com/palettes.html */
-/* FFD8BE - FFEEDD - F8F7FF - B8B8FF - 9381FF  pallets used gentle */
+/* F2545B - A93F55 - 19323C - F3F7F0 - 8C5E58  pallets used pump */
+.allcolorfortes {
+  color: #f2545b;
+  color: #a93f55;
+  color: #19323c;
+  color: #f3f7f0;
+  color: #8c5e58;
+}
 
 body {
   font-family: 'Avenir', Tahoma, Arial, Helvetica, sans-serif;
@@ -24,13 +31,21 @@ img {
 
 h1,
 h2,
-h3 {
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Libre Baskerville', serif;
   font-size: 2em;
   font-weight: normal;
 }
 
 a {
   color: currentColor;
+  font-family: 'Lato', sans-serif;
+}
+p {
+  font-family: 'Lato', sans-serif;
 }
 
 .wrapper {
@@ -82,3 +97,6 @@ a {
   display: block;
 }
  */
+.sticky-on {
+  padding-top: 60px;
+}
