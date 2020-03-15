@@ -13,7 +13,7 @@ export default props => {
       window.removeEventListener('scroll', handleScroll)
       setFixed(null)
     }
-  }, [window.addEventListener('scroll', handleScroll)])
+  }, [])
 
   function handleScroll() {
     var navbar = document.getElementById('nav-cont')
