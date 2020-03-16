@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
-import Hero from '../components/hero'
+/* import Hero from '../components/hero' */
 import Layout from '../components/layout'
 import ArticlePreview from '../components/article-preview'
 
@@ -10,15 +10,28 @@ class RootIndex extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const posts = get(this, 'props.data.allContentfulBlogPost.edges')
-    const [author] = get(this, 'props.data.allContentfulPerson.edges')
+    /* const [author] = get(this, 'props.data.allContentfulPerson.edges') */
 
     return (
       <Layout location={this.props.location}>
         <div style={{ background: '#F3F7F0' }}>
           <Helmet title={siteTitle} />
-          <Hero data={author.node} />
+          {/* <Hero data={author.node} /> */}
+          <div className="wrapper-recent">
+            <h2 className="section-headline">Recent</h2>
+            <ul className="article-list">
+              {posts.map(({ node }, index) => {
+                if (index < 3)
+                  return (
+                    <li key={node.slug}>
+                      <ArticlePreview article={node} />
+                    </li>
+                  )
+              })}
+            </ul>
+          </div>
           <div className="wrapper">
-            <h2 className="section-headline">Recent articles</h2>
+            <h2 className="section-headline">All Stories</h2>
             <ul className="article-list">
               {posts.map(({ node }) => {
                 return (
@@ -64,7 +77,9 @@ export const pageQuery = graphql`
         }
       }
     }
-    allContentfulPerson(
+  }
+`
+/*    allContentfulPerson(
       filter: { contentful_id: { eq: "15jwOBqpxqSAOy2eOO4S0m" } }
     ) {
       edges {
@@ -86,6 +101,4 @@ export const pageQuery = graphql`
           }
         }
       }
-    }
-  }
-`
+    } */
