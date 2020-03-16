@@ -48,6 +48,12 @@ p {
   font-family: 'Lato', sans-serif;
 }
 
+.wrapper-recent {
+  width: calc(100% - 10vmin);
+  margin: 0 auto;
+  padding: 5vmin 0;
+  border-bottom: 4px solid #19323c;
+}
 .wrapper {
   width: calc(100% - 10vmin);
   margin: 0 auto;
