@@ -3,6 +3,7 @@ import { graphql } from 'gatsby'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
 /* import Hero from '../components/hero' */
+import PickPost from '../components/pick-post'
 import Layout from '../components/layout'
 import ArticlePreview from '../components/article-preview'
 
@@ -17,6 +18,7 @@ class RootIndex extends React.Component {
         <div style={{ background: '#F3F7F0' }}>
           <Helmet title={siteTitle} />
           {/* <Hero data={author.node} /> */}
+          <PickPost />
           <div className="wrapper-recent">
             <h2 className="section-headline">Recent</h2>
             <ul className="article-list">
