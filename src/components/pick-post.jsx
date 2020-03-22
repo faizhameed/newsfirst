@@ -37,7 +37,7 @@ export default () => {
       {data.allContentfulBlogPost.edges.map((post, i) => {
         if (i === 0)
           return (
-            <div className={styles.hero}>
+            <div className={styles.hero} key={'pick-post ' + i}>
               <Img
                 className={styles.heroImage}
                 alt={post.node.title}

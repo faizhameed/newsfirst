@@ -25,7 +25,7 @@ class RootIndex extends React.Component {
               {posts.map(({ node }, index) => {
                 if (index < 3)
                   return (
-                    <li key={node.slug}>
+                    <li key={node.slug + 'recent'}>
                       <ArticlePreview article={node} />
                     </li>
                   )
@@ -37,7 +37,7 @@ class RootIndex extends React.Component {
             <ul className="article-list">
               {posts.map(({ node }) => {
                 return (
-                  <li key={node.slug}>
+                  <li key={node.slug + 'article-list'}>
                     <ArticlePreview article={node} />
                   </li>
                 )
