@@ -4,3 +4,8 @@
 .navbar-dark .navbar-toggler {
   margin: 10px;
 }
+@media (min-width: 992px) {
+  .navbar-expand-lg .navbar-collapse {
+    justify-content: center;
+  }
+}

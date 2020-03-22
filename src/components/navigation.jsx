@@ -72,17 +72,64 @@ export default props => {
             >
               Home
             </Link>
-
             <Link
               eventkey="2"
               className={styles.navigationLink}
               activeClassName={styles.activeNav}
-              to="/blog/"
+              to="/latest-news/"
             >
-              Blog
+              Latest News
             </Link>
             <Link
               eventkey="3"
+              className={styles.navigationLink}
+              activeClassName={styles.activeNav}
+              to="/national/"
+            >
+              National
+            </Link>
+            <Link
+              eventkey="4"
+              className={styles.navigationLink}
+              activeClassName={styles.activeNav}
+              to="/gulf/"
+            >
+              Gulf
+            </Link>
+            <Link
+              eventkey="5"
+              className={styles.navigationLink}
+              activeClassName={styles.activeNav}
+              to="/technology/"
+            >
+              Technology
+            </Link>
+            <Link
+              eventkey="6"
+              className={styles.navigationLink}
+              activeClassName={styles.activeNav}
+              to="/sports/"
+            >
+              Sports
+            </Link>
+            <Link
+              eventkey="7"
+              className={styles.navigationLink}
+              activeClassName={styles.activeNav}
+              to="/entertainment/"
+            >
+              Entertainment
+            </Link>
+            <Link
+              eventkey="8"
+              className={styles.navigationLink}
+              activeClassName={styles.activeNav}
+              to="/opinion/"
+            >
+              Opinion
+            </Link>
+            <Link
+              eventkey="9"
               className={styles.navigationLink}
               activeClassName={styles.activeNav}
               to="/contact/"

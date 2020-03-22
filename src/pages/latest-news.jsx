@@ -6,7 +6,7 @@ import styles from './blog.module.css'
 import Layout from '../components/layout'
 import ArticlePreview from '../components/article-preview'
 
-class BlogIndex extends React.Component {
+class LatestNewsIndex extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const posts = get(this, 'props.data.allContentfulBlogPost.edges')
@@ -15,9 +15,8 @@ class BlogIndex extends React.Component {
       <Layout location={this.props.location}>
         <div style={{ background: '#F3F7F0' }}>
           <Helmet title={siteTitle} />
-          <div className={styles.hero}>Blog</div>
+          <div className={styles.hero}>Latest News</div>
           <div className="wrapper">
-            <h2 className="section-headline">Recent articles</h2>
             <ul className="article-list">
               {posts.map(({ node }) => {
                 return (
@@ -34,19 +33,16 @@ class BlogIndex extends React.Component {
   }
 }
 
-export default BlogIndex
+export default LatestNewsIndex
 
 export const pageQuery = graphql`
-  query BlogIndexQuery {
+  query LatestNewsIndexQuery {
     site {
       siteMetadata {
         title
       }
     }
-    allContentfulBlogPost(
-      sort: { fields: [publishDate], order: ASC }
-      filter: { tags: { eq: "javascript" } }
-    ) {
+    allContentfulBlogPost(sort: { fields: [publishDate], order: ASC }) {
       edges {
         node {
           title
