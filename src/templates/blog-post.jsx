@@ -15,12 +15,12 @@ class BlogPostTemplate extends React.Component {
     const options = {
       renderNode: {
         'embedded-asset-block': node => {
-          const alt = node.data.target.fields.title['en-US']
-          const url = node.data.target.fields.file['en-US'].url
+          const alt = node.data.target.fields.title['en-IN']
+          const url = node.data.target.fields.file['en-IN'].url
           return (
             <div className="container-embed">
               <img className="contentful-img" alt={alt} src={url} />
-              <p>{node.data.target.fields.title['en-US']}</p>
+              <p>{node.data.target.fields.title['en-IN']}</p>
             </div>
           )
         },
