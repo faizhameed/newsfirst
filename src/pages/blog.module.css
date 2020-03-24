@@ -8,4 +8,5 @@
   color: #f3f7f0;
   font-size: 2em;
   overflow: hidden;
+  text-transform: capitalize;
 }

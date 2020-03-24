@@ -84,7 +84,7 @@ export default props => {
               eventkey="3"
               className={styles.navigationLink}
               activeClassName={styles.activeNav}
-              to="/national/"
+              to="/category/national/"
             >
               National
             </Link>
@@ -92,7 +92,7 @@ export default props => {
               eventkey="4"
               className={styles.navigationLink}
               activeClassName={styles.activeNav}
-              to="/gulf/"
+              to="/category/gulf/"
             >
               Gulf
             </Link>
@@ -100,7 +100,7 @@ export default props => {
               eventkey="5"
               className={styles.navigationLink}
               activeClassName={styles.activeNav}
-              to="/technology/"
+              to="/category/technology/"
             >
               Technology
             </Link>
@@ -108,7 +108,7 @@ export default props => {
               eventkey="6"
               className={styles.navigationLink}
               activeClassName={styles.activeNav}
-              to="/sports/"
+              to="/category/sports/"
             >
               Sports
             </Link>
@@ -116,7 +116,7 @@ export default props => {
               eventkey="7"
               className={styles.navigationLink}
               activeClassName={styles.activeNav}
-              to="/entertainment/"
+              to="/category/entertainment/"
             >
               Entertainment
             </Link>
