@@ -15,12 +15,12 @@ class BlogPostTemplate extends React.Component {
     const options = {
       renderNode: {
         'embedded-asset-block': node => {
-          const alt = node.data.target.fields.title['en-IN']
-          const url = node.data.target.fields.file['en-IN'].url
+          const alt = node.data.target.fields.title['en-GB']
+          const url = node.data.target.fields.file['en-GB'].url
           return (
             <div className="container-embed">
               <img className="contentful-img" alt={alt} src={url} />
-              <p>{node.data.target.fields.title['en-IN']}</p>
+              <p>{node.data.target.fields.title['en-GB']}</p>
             </div>
           )
         },
@@ -29,7 +29,7 @@ class BlogPostTemplate extends React.Component {
           if (node.data.uri.indexOf('youtube.com') > -1) {
             let url = node.data.uri
             if (url.indexOf('watch?v=')) {
-              url = url.replace('watch?v=', 'embed/')
+              url = url.replace('watch?v=', 'embed/') // replacing if direct youtube link is posted inteaded of embedded post
             }
             console.log('embed url', url)
             return (

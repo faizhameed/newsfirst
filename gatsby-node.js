@@ -6,6 +6,7 @@ exports.createPages = ({ graphql, actions }) => {
 
   return new Promise((resolve, reject) => {
     const blogPost = path.resolve('./src/templates/blog-post.jsx')
+    const categoryPost = path.resolve('./src/templates/category-posts.jsx')
     resolve(
       graphql(
         `
@@ -36,6 +37,25 @@ exports.createPages = ({ graphql, actions }) => {
             },
           })
         })
+        /* category pages */
+
+        const categories = [
+          'National',
+          'Gulf',
+          'Technology',
+          'Sports',
+          'Entertainment',
+        ]
+        categories.forEach((category, index) => {
+          createPage({
+            path: `/category/${category.toLowerCase()}/`,
+            component: categoryPost,
+            context: {
+              slug: category.toLowerCase(),
+            },
+          })
+        })
+        /* end of category pages */
       })
     )
   })
