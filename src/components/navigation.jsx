@@ -124,7 +124,7 @@ export default props => {
               eventkey="8"
               className={styles.navigationLink}
               activeClassName={styles.activeNav}
-              to="/opinion/"
+              to="/category/opinion/"
             >
               Opinion
             </Link>

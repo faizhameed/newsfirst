@@ -5,8 +5,8 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
   return new Promise((resolve, reject) => {
-    const blogPost = path.resolve('./src/templates/blog-post.jsx')
-    const categoryPost = path.resolve('./src/templates/category-posts.jsx')
+    const blogPost = path.resolve('./src/templates/blog-post.jsx') // renamed as opinion
+    const categoryPost = path.resolve('./src/templates/category-posts.jsx') // for categories divisions
     resolve(
       graphql(
         `
@@ -15,6 +15,7 @@ exports.createPages = ({ graphql, actions }) => {
               edges {
                 node {
                   title
+                  publishDate(formatString: "DDMMYYYYhhmmss")
                   slug
                 }
               }
@@ -26,7 +27,7 @@ exports.createPages = ({ graphql, actions }) => {
           console.log(result.errors)
           reject(result.errors)
         }
-
+        //creating posts page for each blog posts
         const posts = result.data.allContentfulBlogPost.edges
         posts.forEach((post, index) => {
           createPage({
@@ -37,7 +38,8 @@ exports.createPages = ({ graphql, actions }) => {
             },
           })
         })
-        /* category pages */
+
+        /* creating category pages */
 
         const categories = [
           'National',
@@ -45,13 +47,14 @@ exports.createPages = ({ graphql, actions }) => {
           'Technology',
           'Sports',
           'Entertainment',
+          'Opinion',
         ]
         categories.forEach((category, index) => {
           createPage({
             path: `/category/${category.toLowerCase()}/`,
             component: categoryPost,
             context: {
-              slug: category.toLowerCase(),
+              slug: category,
             },
           })
         })
