@@ -1,6 +1,6 @@
 const Promise = require('bluebird')
 const path = require('path')
-
+const { hashDate } = require('./src/utils/hashDate')
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
@@ -15,7 +15,7 @@ exports.createPages = ({ graphql, actions }) => {
               edges {
                 node {
                   title
-                  publishDate(formatString: "DDMMYYYYhhmmss")
+                  publishDate(formatString: "MMMM Do, YYYY")
                   slug
                 }
               }
@@ -30,8 +30,9 @@ exports.createPages = ({ graphql, actions }) => {
         //creating posts page for each blog posts
         const posts = result.data.allContentfulBlogPost.edges
         posts.forEach((post, index) => {
+          let dateSlug = hashDate(post.node.publishDate)
           createPage({
-            path: `/post/${post.node.publishDate}/${post.node.slug}/`,
+            path: `/post/${dateSlug}/${post.node.slug}/`,
             component: blogPost,
             context: {
               slug: post.node.slug,

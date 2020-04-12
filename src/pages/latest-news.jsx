@@ -47,7 +47,7 @@ export const pageQuery = graphql`
         node {
           title
           slug
-          publishDate(formatString: "DDMMYYYYhhmmss")
+          publishDate(formatString: "MMMM Do, YYYY")
           tags
           heroImage {
             fluid(maxWidth: 350, maxHeight: 196, resizingBehavior: SCALE) {

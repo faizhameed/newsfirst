@@ -2,6 +2,7 @@ import React from 'react'
 import Img from 'gatsby-image'
 import { Link, graphql, useStaticQuery } from 'gatsby'
 import styles from './hero.module.css'
+import { hashDate } from '../utils/hashDate'
 
 export default () => {
   const data = useStaticQuery(graphql`
@@ -12,7 +13,7 @@ export default () => {
             title
             tags
             slug
-            publishDate
+            publishDate(formatString: "MMMM Do, YYYY")
             description {
               description
             }
@@ -31,10 +32,10 @@ export default () => {
       }
     }
   `)
-
   return (
     <div>
       {data.allContentfulBlogPost.edges.map((post, i) => {
+        let dateSlug = hashDate(post.node.publishDate)
         if (i === 0)
           return (
             <div className={styles.hero} key={'pick-post ' + i}>
@@ -45,7 +46,9 @@ export default () => {
               />
               <div className={styles.heroDetails}>
                 <h3 className={styles.heroHeadline}>
-                  <Link to={`/blog/${post.node.slug}`}>{post.node.title}</Link>
+                  <Link to={`/post/${dateSlug}/${post.node.slug}`}>
+                    {post.node.title}
+                  </Link>
                 </h3>
                 <p className={styles.heroTitle}>
                   {post.node.description.description}
