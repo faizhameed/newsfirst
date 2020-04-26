@@ -41,15 +41,15 @@
   text-decoration: none;
 } */
 .navigation-link {
-  color: #f3f7f0;
+  color: #7e7e7e;
   margin: 10px;
 }
 
 a:hover {
-  color: #a93f55;
+  color: #2c2c2c;
   text-decoration: none;
 }
 
 .active-nav {
-  color: #f2545b;
+  color: #000000;
 }

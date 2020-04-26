@@ -1,6 +1,7 @@
 import React from 'react'
 import Layout from '../components/layout'
 import Styles from './contact.module.scss'
+import contactImg from '../assets/email-settings-1707989-1447941.png'
 const ContactUs = () => {
   return (
     <Layout>
@@ -25,6 +26,7 @@ const ContactUs = () => {
           <button type="submit">Send</button>
         </form>
       </div>
+      <img className={Styles.contactImg} src={contactImg} alt="illus" />
     </Layout>
   )
 }
