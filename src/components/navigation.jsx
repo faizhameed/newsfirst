@@ -56,7 +56,6 @@ export default props => {
         collapseOnSelect
         expand="lg"
         fixed={fixed}
-        bg="primary"
         variant="dark"
         id="nav-cont"
         className={styles.navigation}
