@@ -56,12 +56,11 @@ export default props => {
         collapseOnSelect
         expand="lg"
         fixed={fixed}
-        variant="dark"
         id="nav-cont"
         className={styles.navigation}
       >
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" bg="light" />
+        <Navbar.Collapse id="responsive-navbar-nav" bg="light">
           <Nav>
             <Link
               eventkey="1"
