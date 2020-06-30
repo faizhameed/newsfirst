@@ -74,6 +74,7 @@ export const pageQuery = graphql`
           description {
             childMarkdownRemark {
               html
+              excerpt(format: PLAIN)
             }
           }
         }

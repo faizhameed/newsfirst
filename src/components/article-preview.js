@@ -14,11 +14,7 @@ export default ({ article }) => {
         <Link to={`/post/${dateSlug}/${article.slug}`}>{article.title}</Link>
       </h3>
       <small>{article.publishDate}</small>
-      <p
-        dangerouslySetInnerHTML={{
-          __html: article.description.childMarkdownRemark.html,
-        }}
-      />
+      <p>{article.description.childMarkdownRemark.excerpt}</p>
       {article.tags &&
         article.tags.map(tag => (
           <p className={styles.tag} key={tag}>
