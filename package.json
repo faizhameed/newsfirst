@@ -15,7 +15,7 @@
     "gatsby-plugin-sass": "^2.1.30",
     "gatsby-plugin-sharp": "^2.6.11",
     "gatsby-source-contentful": "^2.1.86",
-    "gatsby-transformer-remark": "^2.6.52",
+    "gatsby-transformer-remark": "^5.25.1",
     "gatsby-transformer-sharp": "^2.3.14",
     "lodash": "^4.17.15",
     "node-sass": "^4.13.1",
